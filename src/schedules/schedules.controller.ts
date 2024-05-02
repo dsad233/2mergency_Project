@@ -132,8 +132,8 @@ export class SchedulesController {
   // 스케줄 생성
   @UseGuards(memberRolesGuard)
   @MemberRoles(MemberRole.Admin, MemberRole.Main)
-  @Get("/schedules_h/schedulecreate")
-  @Render("schedulecreate")
+  @Get("/schedules_h/scheduleCreate")
+  @Render("scheduleCreate")
   async schedulescreate(@Param("groupId") groupId: number, @UserInfo() users: Users) {
     return {
       groupId: groupId,
@@ -144,8 +144,8 @@ export class SchedulesController {
   // 스케줄 전체 목록조회
   @UseGuards(memberRolesGuard)
   @MemberRoles(MemberRole.Admin, MemberRole.Main, MemberRole.User)
-  @Get("/schedules_h/scheduleall")
-  @Render("scheduleall")
+  @Get("/schedules_h/scheduleAll")
+  @Render("scheduleAll")
   async scheduleall(@Param("groupId") groupId: number, @UserInfo() users: Users) {
     const schedules = await this.schedulesService.getAllSchedule(groupId);
     return {
@@ -158,8 +158,8 @@ export class SchedulesController {
   // 스케줄 상세 목록조회
   @UseGuards(memberRolesGuard)
   @MemberRoles(MemberRole.Admin, MemberRole.Main, MemberRole.User)
-  @Get("/:scheduleId/schedules_h/schedulelist")
-  @Render("schedulelist")
+  @Get("/:scheduleId/schedules_h/scheduleList")
+  @Render("scheduleList")
   async schedulelist(
     @Param("groupId") groupId: number,
     @Param("scheduleId") scheduleId: number,

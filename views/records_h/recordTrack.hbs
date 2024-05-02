@@ -350,7 +350,9 @@
                     console.log('Location saved successfully.');
                 }
             };
-            recordxhr.send(JSON.stringify({ startTime, endTime ,stackedDistance, startx, starty, endx, endy }));  
+            recordxhr.send(JSON.stringify({ startTime, endTime ,stackedDistance, startx, starty, endx, endy })); 
+            alert('기록 완료!');
+            reset();
             })};
         });
     }

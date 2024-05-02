@@ -1,4 +1,4 @@
-# 오늘도_의자에_앉아있는_그대를_위한 🏃‍♂️🏃‍♀️ 2MERGENCY PROJECT 🔥
+# 오늘도 의자에 앉아있는 그대를 위한 🏃‍♂️🏃‍♀️ 2MERGENCY PROJECT 🔥
 
 <p align="center">
   <img src="./img/main.png"> 
@@ -221,7 +221,6 @@ Routes 53-8C4FFF?style=for-the-badge&logo=Routes 53&logoColor=white">
 │  │  │  ├─ signup.dto.ts
 │  │  │  └─ update.dto.ts
 │  │  ├─ entities
-│  │  │  ├─ invite.entity.ts
 │  │  │  └─ user.entity.ts
 │  │  ├─ types
 │  │  │  └─ userRole.type.ts
@@ -240,33 +239,33 @@ Routes 53-8C4FFF?style=for-the-badge&logo=Routes 53&logoColor=white">
 ├─ tsconfig.json
 └─ views
 ├─ group-members_h
-│  ├─ groupaccept.hbs
-│  └─ groupinvite.hbs
+│  ├─ groupAccept.hbs
+│  └─ groupInvite.hbs
 ├─ groups_h
-│  ├─ groupall.hbs
-│  ├─ groupcreate.hbs
+│  ├─ groupAll.hbs
+│  ├─ groupCreate.hbs
 │  ├─ groupEdit.hbs
-│  └─ grouplist.hbs
-├─ index.hbs
+│  └─ groupList.hbs
 ├─ records_h
-│  ├─ recordall.hbs
-│  ├─ recordcreate.hbs
-│  └─ recordlist.hbs
+│  ├─ recordAll.hbs
+│  ├─ recordCreate.hbs     
+│  ├─ recordList.hbs
+│  ├─ recordMylist.hbs
+│  └─ recordTrack.hbs
 ├─ schedules_h
-│  ├─ scheduleall.hbs
-│  ├─ schedulecreate.hbs
+│  ├─ scheduleAll.hbs
+│  ├─ scheduleCreate.hbs
 │  ├─ scheduleEdit.hbs
-│  └─ schedulelist.hbs
+│  └─ scheduleList.hbs
 ├─ users_h
-│  ├─ emailaccept.hbs  
-│  ├─ emailsend.hbs
+│  ├─ emailAccept.hbs  
 │  ├─ login.hbs
-│  ├─ registerpage.hbs
-│  ├─ userall.hbs
-│  ├─ userDashboard.hbs
+│  ├─ register.hbs
+│  ├─ userAll.hbs
 │  ├─ userDelete.hbs
 │  ├─ userEdit.hbs
-│  └─ usermypage.hbs
+│  └─ userMypage.hbs
+└─ Dashboard.hbs
 └─ welcomePage.hbs
 
 ```
@@ -279,7 +278,7 @@ Routes 53-8C4FFF?style=for-the-badge&logo=Routes 53&logoColor=white">
 + geolocation api, 
 + records crud, 
 + groups crud, 
-+ AJAX 데이터 전송 방식, 
++ AJAX, 
 + nodemailer, 
 + swagger
 + 🔥 팀 프로젝트 총괄
