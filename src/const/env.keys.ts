@@ -1,10 +1,24 @@
-export const ENV_GOOGLE_ID = 'Google_Mail'
+export const ENV_MAILER_EMAIL = 'MAILER_EMAIL'
 
-export const ENV_GOOGLE_Password = 'Google_Password'
+export const ENV_MAILER_PASSWORD = 'MAILER_PASSWORD'
+
+export const ENV_MAILER_HOST = 'MAILER_HOST'
 
 export const ENV_DB_USERNAME = 'DB_USERNAME'
 
 export const ENV_DB_PASSWORD = 'DB_PASSWORD'
+
+export const ENV_S3_REGION = 'S3_REGION';
+
+export const ENV_S3_BUCKET = 'S3_BUCKET'
+
+export const ENV_S3_ACCESS_KEY_ID = 'S3_ACCESS_KEY_ID'
+
+export const ENV_S3_SECRET_ACCESS_KEY = 'S3_SECRET_ACCESS_KEY'
+
+export const ENV_ROLE_ADMIN_PASSWORD = 'ROLE_ADMIN_PASSWORD'
+
+export const ENV_PASSWORD_HASH_ROUNDS = 'PASSWORD_HASH_ROUNDS'
 
 export const ENV_DB_HOST = 'DB_HOST'
 

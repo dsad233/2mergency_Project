@@ -1,48 +1,57 @@
-import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
-import { Category } from "../../types/Category.type";
-import { Users } from "src/users/entities/user.entity";
-import { GroupMembers } from "src/group-members/entities/group-member.entity";
-import { Schedules } from "src/schedules/entities/schedule.entity";
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  OneToMany,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
+import { Category } from '../../types/Category.type';
+import { GroupMembers } from 'src/group-members/entities/group-member.entity';
+import { Schedules } from 'src/schedules/entities/schedule.entity';
+import { ScheduleMembers } from 'src/schedule-members/entities/schedule-member.entity';
 
 @Entity({
-    name : 'groups'
+  name: 'groups',
 })
 export class Groups {
+  @PrimaryGeneratedColumn()
+  groupId: number;
 
-    @PrimaryGeneratedColumn()
-    groupId : number; 
+  @Column({ type: 'varchar', nullable: false })
+  title: string;
 
-    @Column({ type : 'varchar', nullable : false })
-    title : string;
+  @Column({ type: 'text', nullable: false })
+  content: string;
 
-    @Column({ type : 'text', nullable : false })
-    content : string;
+  @Column({ type: 'enum', enum: Category, nullable: false })
+  category: Category;
 
-    @Column({ type : 'enum', enum: Category, nullable : false })
-    category : Category;
+  @Column({ type: 'boolean', nullable: false, default: true })
+  isPublic: boolean;
 
-    @Column({ type : 'boolean', nullable : false, default : true })
-    isPublic : boolean;
+  @CreateDateColumn({ type: 'date' })
+  createdAt: Date;
 
-    @CreateDateColumn({ type : 'timestamp' })
-    createdAt : Date;
-    
-    @UpdateDateColumn({ type : 'timestamp' })
-    updatedAt : Date;
-    
+  @UpdateDateColumn({ type: 'date' })
+  updatedAt: Date;
 
-    @ManyToOne(() => Users)
-    @JoinColumn({ name : 'userId', referencedColumnName : 'userId' })
-    users : Users;
+  @OneToMany(() => Schedules, (schedules) => schedules.groups, {
+    cascade: true,
+  })
+  schedules: Schedules[];
 
-    @Column({ type : 'int', nullable : false })
-    userId : number;
+  @OneToMany(
+    () => ScheduleMembers,
+    (scheduleMembers) => scheduleMembers.groups,
+    {
+      cascade: true,
+    },
+  )
+  scheduleMembers: ScheduleMembers[];
 
-    @OneToMany(() => Schedules, (schedules) => schedules.groups)
-    schedules : Schedules[];
-
-    @OneToMany(() => GroupMembers, (groupMembers) => groupMembers.groups)
-    groupMembers : GroupMembers[];
-
-    
+  @OneToMany(() => GroupMembers, (groupMembers) => groupMembers.groups, {
+    cascade: true,
+  })
+  groupMembers: GroupMembers[];
 }
